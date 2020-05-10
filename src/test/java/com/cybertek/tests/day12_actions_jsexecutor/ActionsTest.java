@@ -23,7 +23,7 @@ public class ActionsTest {
     @AfterMethod
     public void afterMethod() throws InterruptedException {
         Thread.sleep(4000);
-        driver.quit();
+        //driver.quit();
     }
 
 

@@ -136,6 +136,17 @@ public class WebTablesExample {
         }
 
         @Test
+        public void getCellInRelationToAnotherCellInSameRow(){
+        String firstName = "John";
+        String xpath = "//table[@id='table1']//td[.='"+firstName+"']/../td[3]";
+
+            WebElement email = driver.findElement(By.xpath(xpath));
+
+            System.out.println(email.getText());
+        }
+
+
+        @Test
         public void cellExecution(){
             System.out.println("cell(1,1) = " + cell(1, 1).getText());
         }
