@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -132,6 +133,30 @@ public class TablesReview {
 
     private int getColumnNumber() {
         return driver.findElements(By.xpath("//table[2]//th")).size();
+    }
+
+    @DataProvider
+    public Object [] namesData(){
+        return new Object[]{"John","Frank","Jason","Tim"};
+    }
+    @Test(dataProvider = "namesData")
+    public void test10(String name){
+
+
+        String path = "//table[@id='table1']//td[.='"+name+"']/../td[3]";
+
+        WebElement element = driver.findElement(By.xpath(path));
+        System.out.println(element.getText());
+        List<WebElement> row = driver.findElements(By.xpath("//table[@id='table1']//td[.='"+name+"']/../td"));
+
+
+        for (int i = 1; i <= row.size(); i++) {
+
+            System.out.println(driver.findElement(By.xpath("//table[@id='table1']//td[.='"+name+"']/../td["+i+"]")).getText());
+
+
+
+        }
     }
 
 
