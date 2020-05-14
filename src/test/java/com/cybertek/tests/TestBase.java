@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
+
 public class TestBase {
 
     protected WebDriver driver;
@@ -16,18 +17,20 @@ public class TestBase {
     protected WebDriverWait wait;
 
     @BeforeMethod
-    public void setUpMethod() {
+    public void startMethod(){
         driver = Driver.get();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        actions = new Actions(driver);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver,10);
+        actions = new Actions(driver);
+
 
     }
 
     @AfterMethod
-    public void afterMethod() throws InterruptedException {
-        Thread.sleep(4000);
+    public void closeMethod() throws InterruptedException {
+        Thread.sleep(2000);
         Driver.closeDriver();
+
     }
 }
