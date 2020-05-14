@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+
 
 public class LoginTest extends TestBase {
 
@@ -15,10 +15,10 @@ public class LoginTest extends TestBase {
     public void test1(){
         driver.get(ConfigurationReader.get("url"));
 
-        String userName = "driver_username";
-        String passWord = "driver_password";
-        driver.findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.get(userName));
-        driver.findElement(By.id("prependedInput2")).sendKeys(passWord+ Keys.ENTER);
+        String username = ConfigurationReader.get("driver_username");
+        String password = ConfigurationReader.get("driver_password");
+        driver.findElement(By.id("prependedInput")).sendKeys(username);
+        driver.findElement(By.id("prependedInput2")).sendKeys(password+ Keys.ENTER);
 
     }
 }

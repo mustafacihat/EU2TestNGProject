@@ -11,9 +11,10 @@ public class AnotherLoginTest extends TestBase {
     @Test
     public void test(){
         driver.get(ConfigurationReader.get("url"));
-        String userName = "driver_username";
-        String passWord = "driver_password";
-        driver.findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.get(userName));
-        driver.findElement(By.id("prependedInput2")).sendKeys(passWord+ Keys.ENTER);
+
+        String username = ConfigurationReader.get("driver_username");
+        String password = ConfigurationReader.get("driver_password");
+        driver.findElement(By.id("prependedInput")).sendKeys(username);
+        driver.findElement(By.id("prependedInput2")).sendKeys(password+ Keys.ENTER);
     }
 }
