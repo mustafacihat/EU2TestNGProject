@@ -17,6 +17,8 @@ public class LoginTest extends TestBase {
 
         String username = ConfigurationReader.get("driver_username");
         String password = ConfigurationReader.get("driver_password");
+
+
         driver.findElement(By.id("prependedInput")).sendKeys(username);
         driver.findElement(By.id("prependedInput2")).sendKeys(password+ Keys.ENTER);
 
