@@ -11,23 +11,24 @@ public class NegativeLoginTest extends TestBase {
     LoginPage loginPage = new LoginPage();
 
     @Test
-    public void wrongPasswordTest(){
+    public void wrongPasswordTest() {
 
 
-
-        loginPage.userNameInput.sendKeys("user1");
+        loginPage.usernameInput.sendKeys("user1");
         loginPage.passwordInput.sendKeys("somepassword");
         loginPage.loginBtn.click();
 
-        Assert.assertEquals(driver.getCurrentUrl(),"https://qa3.vytrack.com/user/login");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa3.vytrack.com/user/login");
     }
 
     @Test
-    public void wrongUsernameTest(){
+    public void wrongUsernameTest() {
 
-        loginPage.userNameInput.sendKeys("someusername");
+        loginPage.usernameInput.sendKeys("someusername");
         loginPage.passwordInput.sendKeys("UserUser123");
-        Assert.assertEquals(driver.getCurrentUrl(),"https://qa3.vytrack.com/user/login");
+        loginPage.loginBtn.click();
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa3.vytrack.com/user/login");
 
     }
 
