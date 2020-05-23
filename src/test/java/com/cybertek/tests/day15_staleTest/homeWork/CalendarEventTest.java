@@ -6,13 +6,9 @@ import com.cybertek.pages.DashboardPage;
 import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.BrowserUtils;
-import com.cybertek.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.Arrays;
 import java.util.List;
 
 public class CalendarEventTest extends TestBase {
@@ -28,7 +24,7 @@ public class CalendarEventTest extends TestBase {
 
         extentLogger.info("username : " + userName);
         extentLogger.info("password : " + password);
-        extentLogger.info("login is a store manager");
+        extentLogger.info("login as a store manager");
         loginPage.login(userName, password);
 
         extentLogger.info("navigate to Activities --> Calendar Events");
@@ -121,7 +117,7 @@ public class CalendarEventTest extends TestBase {
 
         extentLogger.info("find the number of the total rows on grid page by page");
         String totalRowNumber = calendarEventsPage.totalRow();
-
+        System.out.println(totalRowNumber);
         extentLogger.info("verify the total row numbers equal to record number");
         Assert.assertTrue(calendarEventsPage.record.getText().contains(totalRowNumber),"Verify the number of calendar events equal to record number");
 

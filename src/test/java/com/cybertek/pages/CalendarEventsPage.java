@@ -59,12 +59,8 @@ public class CalendarEventsPage extends BasePage {
     }
 
     public List<WebElement> allGridCheckBox() {
-        List<WebElement> checkBoxes = new ArrayList<>();
-        for (int i = 1; i <= Integer.valueOf(viewPerPage.getText()); i++) {
-            checkBoxes.add(Driver.get().findElement(By.xpath("//table//tbody/tr[@class='grid-row row-click-action'][" + i + "]/td[1]/input")));
-
-        }
-
+        List<WebElement> checkBoxes = Driver.get().findElements(By.xpath("//tr[*]//td[1]/input"));
+        ////table//tbody/tr[@class='grid-row row-click-action'][" + i + "]/td[1]/input
         return checkBoxes;
     }
 
@@ -76,7 +72,8 @@ public class CalendarEventsPage extends BasePage {
             List<WebElement> elements = Driver.get().findElements(By.xpath("//table/tbody[@class='grid-body']/tr"));
             totalRow += elements.size();
 
-            nextPage.click();
+
+            BrowserUtils.clickWithJS(nextPage);
             BrowserUtils.waitFor(2);
 
         }
