@@ -8,24 +8,25 @@ import org.testng.annotations.Test;
 
 public class PositiveLoginTest extends TestBase {
 
-    LoginPage loginPage = new LoginPage();
+
 
     @Test
     public void loginAsDriver() {
+        LoginPage loginPage = new LoginPage();
         String userName = ConfigurationReader.get("driver_username");
         String password = ConfigurationReader.get("driver_password");
         loginPage.login(userName, password);
 
-        Assert.assertEquals(driver.getCurrentUrl(), "https://qa3.vytrack.com/", "verify we succesfully login");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa1.vytrack.com/", "verify we succesfully login");
     }
 
     @Test
-    public void loginAsStoreManager() {
+    public void loginAsStoreManager() { LoginPage loginPage = new LoginPage();
         String userName = ConfigurationReader.get("storemanager_username");
         String password = ConfigurationReader.get("storemanager_password");
         loginPage.login(userName, password);
 
-        Assert.assertEquals(driver.getCurrentUrl(), "https://qa3.vytrack.com/", "verify we succesfully login");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa1.vytrack.com/", "verify we succesfully login");
 
     }
 
