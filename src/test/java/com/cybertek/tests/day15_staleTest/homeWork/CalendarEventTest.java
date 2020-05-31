@@ -109,12 +109,13 @@ public class CalendarEventTest extends TestBase {
         loginPage.login(userName, password);
 
         extentLogger.info("navigate to Activities --> Calendar Events");
-        BrowserUtils.waitForPageToLoad(10);
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
         new DashboardPage().navigateToModule("Activities","Calendar Events");
 
-        BrowserUtils.waitForPageToLoad(10);
-        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
 
+
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
         extentLogger.info("find the number of the total rows on grid page by page");
         String totalRowNumber = calendarEventsPage.totalRow();
         System.out.println(totalRowNumber);
@@ -140,17 +141,19 @@ public class CalendarEventTest extends TestBase {
         loginPage.login(userName, password);
 
         extentLogger.info("navigate to Activities --> Calendar Events");
-        BrowserUtils.waitForPageToLoad(10);
+        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
         new DashboardPage().navigateToModule("Activities","Calendar Events");
 
 
 
         BrowserUtils.waitForPageToLoad(10);
-        CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
+
 
         extentLogger.info("create a list to hold all grid checkbox");
         List<WebElement> checkBoxList = calendarEventsPage.allGridCheckBox();
         extentLogger.info("click on the all check box button to select all grid check boxes");
+        calendarEventsPage.waitUntilLoaderScreenDisappear();
         calendarEventsPage.allCheckBox.click();
 
 
