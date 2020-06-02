@@ -24,6 +24,7 @@ public class ClassNameTest {
         System.out.println(driver.findElement(By.className("h3")).getText());
 
 
+        System.setProperty("webdriver.edge.driver", "driver/MicrosoftWebDriver.exe");
 
     }
 }
