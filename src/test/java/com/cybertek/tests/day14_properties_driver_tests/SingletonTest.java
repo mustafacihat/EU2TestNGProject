@@ -10,6 +10,7 @@ public class SingletonTest {
     @Test
     public void test(){
         String s1 = Singleton.getInstance();
+        System.out.println("--------------------------------------");
         String s2 = Singleton.getInstance();
 
         System.out.println("s1 = " + s1);

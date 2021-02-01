@@ -9,6 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class FileUploadTest {
@@ -29,6 +30,8 @@ public class FileUploadTest {
 
     @Test
     public void test1() throws InterruptedException {
+
+        
         driver.get("http://practice.cybertekschool.com/upload");
 
         String projectPath = System.getProperty("user.dir");

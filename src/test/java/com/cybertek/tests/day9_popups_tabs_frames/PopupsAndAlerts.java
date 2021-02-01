@@ -53,7 +53,6 @@ public class PopupsAndAlerts {
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[2]")).click();
 
-
         //Click the Cancel button
         alert.dismiss();
 

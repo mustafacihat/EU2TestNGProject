@@ -44,6 +44,26 @@ public class CalendarEventsPage extends BasePage {
     @FindBy(xpath = "//label[contains(text(),'Total of')]")
     public WebElement record;
 
+    @FindBy(xpath = "//label[contains(text(),'of')][1]")
+    public WebElement totalPages;
+
+    @FindBy(css = "button[class='btn dropdown-toggle ']")
+    public WebElement defaultRowNumber;
+
+    @FindBy(css = "input[type='number']")
+    public WebElement pageInputBox;
+
+    @FindBy(xpath = "//table/tbody[@class='grid-body']/tr")
+    public List<WebElement> rowsInOnePage;
+
+
+    public Integer initialTotalRow() {
+        Integer dRows = Integer.parseInt(defaultRowNumber.getText());
+        Integer pNums = Integer.parseInt(totalPages.getText().split(" ")[1]);
+        return (pNums - 1) * dRows;
+
+    }
+
 
     public WebElement getCalendarEventTitle(String title) {
 
@@ -79,7 +99,5 @@ public class CalendarEventsPage extends BasePage {
         }
         return String.valueOf(totalRow);
     }
-
-
 
 }

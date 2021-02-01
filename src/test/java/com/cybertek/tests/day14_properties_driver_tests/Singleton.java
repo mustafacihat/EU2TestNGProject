@@ -14,9 +14,11 @@ public class Singleton {
     public static String getInstance() {
 
 
-        //if str has no value, initialize it and return it
+        //signleton class will have private constructor
+        //it means other classes cannot create object of this class
+        //if str has no value, initialize it and return it"st
         if (str == null) {
-            System.out.println("str is nul. assgining value to it");
+            System.out.println("str is null. assgining value to it");
             str = "somevalue";
         } else {
             //if it has value just return it

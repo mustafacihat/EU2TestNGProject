@@ -35,7 +35,7 @@ public class VerifyUrlNotChanged {
         //we save the url after we click button
         String actualUrl = driver.getCurrentUrl();
 
-        String result = expectedtUrl.equalsIgnoreCase(actualUrl)?"PASS":"FAIL";
+        String result = expectedtUrl.equalsIgnoreCase(actualUrl) ? "PASS" : "FAIL";
 
         System.out.println(result);
 
@@ -45,7 +45,7 @@ public class VerifyUrlNotChanged {
             System.out.println("FAIL");
         }*/
 
-       //close browser after everything
+        //close browser after everything
         driver.quit();
 
     }

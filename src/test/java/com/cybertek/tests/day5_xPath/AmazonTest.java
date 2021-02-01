@@ -21,7 +21,7 @@ public class AmazonTest {
         String text = info.getText();
         System.out.println(text);
 
-        driver.quit();
+        //driver.quit();
 
 
     }

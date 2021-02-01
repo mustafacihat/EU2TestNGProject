@@ -23,7 +23,7 @@ public class DisplayDemoTest {
 
         Assert.assertFalse(userNameInput.isDisplayed(), "verify that username NOT displayed in the screen");
 
-        driver.findElement(By.xpath("//button[text()='Start']")).click();
+        //driver.findElement(By.xpath("//button[text()='Start']")).click();
 
 
         Thread.sleep(5000);
